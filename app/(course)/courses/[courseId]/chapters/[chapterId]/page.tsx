@@ -7,6 +7,7 @@ import { CourseEnrollButton } from "./_components/course-enroll-button";
 import { Separator } from "@/components/ui/separator";
 import { Preview } from "@/components/preview";
 import { File } from "lucide-react";
+import FlutterCheckout from "./_components/flutter-checkout";
 
 const ChapterIdPage =async ({
     params
