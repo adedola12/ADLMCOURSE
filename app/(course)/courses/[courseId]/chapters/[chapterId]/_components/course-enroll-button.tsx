@@ -1,4 +1,4 @@
-"use client"
+
 
 import { Logo } from "@/app/(dashboard)/_components/logo";
 import { Button } from "@/components/ui/button";
