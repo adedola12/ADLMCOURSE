@@ -29,6 +29,7 @@ export const getChapter = async ({
       },
       select: {
         price: true,
+        title: true
       }
     });
 
@@ -38,6 +39,7 @@ export const getChapter = async ({
         isPublished: true,
       }
     });
+    
 
     if (!chapter || !course) {
       throw new Error("Chapter or course not found");
