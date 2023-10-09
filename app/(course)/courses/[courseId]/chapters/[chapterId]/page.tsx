@@ -8,8 +8,8 @@ import CourseEnrollButton from "./_components/course-enroll-button"; // Import t
 import { Separator } from "@/components/ui/separator";
 import { Preview } from "@/components/preview";
 import { File } from "lucide-react";
-import FlutterCheckout from "./_components/flutter-checkout";
-import { useEffect, useState } from "react";
+
+
 import { CourseProgressButton } from "./_components/course-progress-button";
 
 const ChapterIdPage = async ({
