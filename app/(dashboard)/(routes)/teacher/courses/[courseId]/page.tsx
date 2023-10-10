@@ -19,7 +19,7 @@ import { Actions } from "./_components/actions";
 const CourseIdPage = async ({ 
   params 
 }: { 
-  params: { courseId: String } 
+  params: { courseId: string } 
 }) => {
   const { userId } = auth();
 
