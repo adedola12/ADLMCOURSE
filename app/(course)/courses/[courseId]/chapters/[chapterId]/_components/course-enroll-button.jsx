@@ -10,7 +10,7 @@ import { db } from "@/lib/db";
 import { redirect, useRouter } from "next/navigation";
 import axios from "axios";
 
-const CourseEnrollButton = ({ course, price, courseTitle, courseId }) => {
+const CourseEnrollButton = ({ price, courseTitle, courseId }) => {
   const { user } = useClerk();
 
   useEffect(() => {
