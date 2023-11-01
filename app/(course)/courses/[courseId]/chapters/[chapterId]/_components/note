@@ -1,0 +1,44 @@
+ // const config = {
+  //   public_key: "FLWPUBK_TEST-17e331e0cadddaf16b06fa541080507b-X",
+  //   tx_ref: Date.now().toString(),
+  //   amount: price,
+  //   currency: 'NGN',
+  //   payment_options: 'card,mobilemoney,ussd',
+  //   customer: {
+  //     email,
+  //     phone_number,
+  //     name,
+  //   },
+  //   customizations: {
+  //     title,
+  //     description: 'Payment for items in cart',
+  //     logo,
+  //   },
+  // };
+
+  // const handleFlutterPayment = useFlutterwave(config);
+
+  // const handlePurchase = async () => {
+  //   const { userId } = auth(); // Define userId using auth() from Clerk
+  
+  //   try {
+  //     const response = await fetch("/api/purchase", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         courseId: courseId, // Provide the courseId
+  //         userId: userId, // Use the defined userId
+  //       }),
+  //     });
+  
+  //     if (response.status === 200) {
+  //       console.log("Course purchase marked as true in the database.");
+  //     } else {
+  //       console.error("Failed to update the database.");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error updating the database:", error);
+  //   }
+  // };
