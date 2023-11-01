@@ -29,25 +29,25 @@ const CourseEnrollButton = ({ price, courseTitle, courseId }) => {
 
   const router = useRouter()
 
-  const config = {
-    public_key: "FLWPUBK_TEST-17e331e0cadddaf16b06fa541080507b-X",
-    tx_ref: Date.now().toString(),
-    amount: price,
-    currency: 'NGN',
-    payment_options: 'card,mobilemoney,ussd',
-    customer: {
-      email,
-      phone_number,
-      name,
-    },
-    customizations: {
-      title,
-      description: 'Payment for items in cart',
-      logo,
-    },
-  };
+  // const config = {
+  //   public_key: "FLWPUBK_TEST-17e331e0cadddaf16b06fa541080507b-X",
+  //   tx_ref: Date.now().toString(),
+  //   amount: price,
+  //   currency: 'NGN',
+  //   payment_options: 'card,mobilemoney,ussd',
+  //   customer: {
+  //     email,
+  //     phone_number,
+  //     name,
+  //   },
+  //   customizations: {
+  //     title,
+  //     description: 'Payment for items in cart',
+  //     logo,
+  //   },
+  // };
 
-  const handleFlutterPayment = useFlutterwave(config);
+  // const handleFlutterPayment = useFlutterwave(config);
 
   // const handlePurchase = async () => {
   //   const { userId } = auth(); // Define userId using auth() from Clerk
@@ -81,25 +81,28 @@ const CourseEnrollButton = ({ price, courseTitle, courseId }) => {
       onClick={() => {
         // Ensure that userId is available and courseId is defined
         if (user && courseId) {
-          handleFlutterPayment({
-            callback: async (response) => {
-              console.log(response);
-              if (response.status === "completed") {
-                //Use axios Option
+        //   handleFlutterPayment({
+        //     callback: async (response) => {
+        //       console.log(response);
+        //       if (response.status === "completed") {
+        //         //Use axios Option
                 
-                await axios.put(`/api/courses/${courseId}/purchase`)
+        //         await axios.put(`/api/courses/${courseId}/purchase`)
 
-          // await handlePurchase(userId); // Call the handlePurchase function
-        } else {
-          console.log("Failed Trnx");
-        }
+        //   // await handlePurchase(userId); // Call the handlePurchase function
+        // } else {
+        //   console.log("Failed Trnx");
+        // }
 
-              closePaymentModal();
-            },
-            onClose: () => {
-              console.log("User closed themselves");
-            },
-          });
+        //       closePaymentModal();
+        //     },
+        //     onClose: () => {
+        //       console.log("User closed themselves");
+        //     },
+        //   });
+
+        window.location.href = "https://wa.me/c/2348106503524"
+        
         } else {
           console.log("UserID not available; cannot update DB or courseId is missing");
         }
