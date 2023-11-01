@@ -5,16 +5,14 @@ import { redirect, useParams } from "next/navigation";
 import { VideoPlayer } from "./_components/video-player";
 import CourseEnrollButton from "./_components/course-enroll-button"; // Import the component
 
-
 import { Separator } from "@/components/ui/separator";
 import { Preview } from "@/components/preview";
 import { File } from "lucide-react";
 
-
 import { CourseProgressButton } from "./_components/course-progress-button";
 
 const ChapterIdPage = async ({
-  params
+  params,
 }: {
   params: { courseId: string; chapterId: string };
 }) => {
@@ -31,11 +29,11 @@ const ChapterIdPage = async ({
     attachments,
     nextChapter,
     userProgress,
-    purchase
+    purchase,
   } = await getChapter({
     userId,
     chapterId: params.chapterId,
-    courseId: params.courseId
+    courseId: params.courseId,
   });
 
   if (!chapter || !course) {
@@ -74,7 +72,7 @@ const ChapterIdPage = async ({
         <div className="p-4 flex flex-col md:flex-row items-center justify-between">
           <h2 className="text-2xl font-semibold mb-2">{chapter.title}</h2>
           {purchase ? (
-            <CourseProgressButton 
+            <CourseProgressButton
               chapterId={params.chapterId}
               courseId={params.courseId}
               nextChapterId={nextChapter?.id}
@@ -82,11 +80,11 @@ const ChapterIdPage = async ({
             />
           ) : (
             <CourseEnrollButton
-            courseTitle={params.courseId}
+              courseTitle={params.courseId}
               courseId={params.courseId}
               price={course.price!} // Ensure course.price is available
             />
-            // <Payment 
+            // <Payment
             //   courseTitle={params.courseId}
             //   courseId={params.courseId}
             //   price={course.price}
