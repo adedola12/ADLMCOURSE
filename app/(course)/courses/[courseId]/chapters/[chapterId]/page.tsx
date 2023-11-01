@@ -4,7 +4,7 @@ import { auth } from "@clerk/nextjs";
 import { redirect, useParams } from "next/navigation";
 import { VideoPlayer } from "./_components/video-player";
 import CourseEnrollButton from "./_components/course-enroll-button"; // Import the component
-import Payment from "./_components/Payment"
+
 
 import { Separator } from "@/components/ui/separator";
 import { Preview } from "@/components/preview";
@@ -81,16 +81,16 @@ const ChapterIdPage = async ({
               isCompleted={!!userProgress?.isCompleted}
             />
           ) : (
-            // <CourseEnrollButton
-            // courseTitle={params.courseId}
-            //   courseId={params.courseId}
-            //   price={course.price!} // Ensure course.price is available
-            // />
-            <Payment 
-              courseTitle={params.courseId}
+            <CourseEnrollButton
+            courseTitle={params.courseId}
               courseId={params.courseId}
-              price={course.price}
+              price={course.price!} // Ensure course.price is available
             />
+            // <Payment 
+            //   courseTitle={params.courseId}
+            //   courseId={params.courseId}
+            //   price={course.price}
+            // />
           )}
         </div>
         <Separator />
